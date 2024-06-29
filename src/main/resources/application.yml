@@ -1,0 +1,26 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /api/v1
+spring:
+  application:
+    name: soap-demo
+  profiles:
+    active: dev
+app:
+  external-service:
+    uri: http://www.dneonline.com/calculator.asmx
+    connection-timeout: 5000
+    read-timeout: 30000
+springdoc:
+  swagger-ui:
+    try-it-out-enabled: true
+    tags-sorter: alpha
+    operations-sorter: alpha
+logging:
+  level:
+    org.zalando.logbook: DEBUG
+    com.arian.example: TRACE
+
+# http://www.dneonline.com/calculator.asmx?WSDL
+# http://localhost:9001/api/v1/swagger-ui/index.html
